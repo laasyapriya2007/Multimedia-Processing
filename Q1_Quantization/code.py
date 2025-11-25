@@ -1,4 +1,3 @@
-# color_quant.py
 from PIL import Image
 import numpy as np
 from collections import defaultdict, deque
@@ -224,12 +223,12 @@ class OctreeQuantizer:
 # ------------------------------
 if __name__ == "__main__":
     import sys
-    img_path = "example.jpg"  # change to your file
+    img_path = "input.jpg"  # change to your file
     try:
         src = Image.open(img_path)
     except FileNotFoundError:
-        # generate a test image if example.jpg not present
-        print("example.jpg not found — generating test gradient image.")
+        # generate a test image if input.jpg not present
+        print("input.jpg not found — generating test gradient image.")
         w, h = 320, 240
         src = Image.new("RGB", (w, h))
         for y in range(h):
@@ -260,4 +259,3 @@ if __name__ == "__main__":
     print("Saved out_octree.png")
 
     print("Done. Outputs: out_desaturation.png, out_mediancut.png, out_octree.png")
-
